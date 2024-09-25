@@ -12,5 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: dart-lang/setup-dart@v1
+    - uses: rrainn/dynamodb-action@v2.0.1
+      with:
+        sharedDb: true
+        port: 8000
+        cors: '*'
     - run: dart pub get
     - run: dart test
